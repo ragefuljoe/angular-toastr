@@ -64,6 +64,7 @@
       if (toast && ! toast.deleting) { // Avoid clicking when fading out
         toast.deleting = true;
         toast.isOpened = false;
+        $animate.enabled(false);
         $animate.leave(toast.el).then(function() {
           if (toast.scope.options.onHidden) {
             toast.scope.options.onHidden(wasClicked);
